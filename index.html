@@ -60,6 +60,17 @@
   .shot img{display:block;width:100%}
   .shot .cap{padding:11px 15px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
   .shot .cap b{color:var(--ink)}
+  .ps{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 26px}
+  @media(max-width:720px){.ps{grid-template-columns:1fr}}
+  .ps .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 18px;box-shadow:var(--shadow)}
+  .ps .lbl{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-bottom:9px}
+  .ps .lbl.p{color:#b91c1c;background:#fee2e2}
+  .ps .lbl.s{color:var(--green);background:var(--green-soft)}
+  .ps p{margin:0;font-size:14px;color:#475569}
+  .ps-mini{margin:12px 0 2px;border-top:1px dashed var(--line);padding-top:12px}
+  .ps-mini p{margin:0 0 7px;font-size:13.5px;color:#475569}
+  .ps-mini b.p{color:#b91c1c}
+  .ps-mini b.s{color:var(--green)}
   .agents{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:8px 0 30px}
   @media(max-width:720px){.agents{grid-template-columns:1fr}}
   .agent{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
@@ -157,6 +168,17 @@
       <div class="kpi"><b>144</b><span>taxonomy nodes</span></div>
     </div>
 
+    <div class="ps">
+      <div class="box">
+        <span class="lbl p">Problem</span>
+        <p>Finance teams receive accounts-payable exports from many systems with inconsistent columns, messy supplier names, and 150k+ rows. Manually tagging each transaction with a supplier, spend category, and GL account is slow, error-prone, and impossible to scale — and the result is hard to trust or audit.</p>
+      </div>
+      <div class="box">
+        <span class="lbl s">Solution</span>
+        <p>A desktop app driven by a four-agent LLM pipeline: it maps any CSV to a canonical schema, normalizes ~925 suppliers and enriches them with web research, classifies every row against a configurable taxonomy, then runs an automated QC pass that flags low-confidence rows for human review — turning a week of manual work into minutes, with a fully auditable trail.</p>
+      </div>
+    </div>
+
     <h3 class="block">The pipeline</h3>
     <div class="flow">
       <span class="step">CSV ingest</span><span class="arrow">→</span>
@@ -222,6 +244,17 @@
       <span class="chip live">screenshots from the live app</span>
     </div>
 
+    <div class="ps">
+      <div class="box">
+        <span class="lbl p">Problem</span>
+        <p>Recruiters juggle hundreds of candidates across spreadsheets and scattered WhatsApp chats, with no single place to filter candidates, run bulk outreach, track pipeline stage, or see conversation history. Candidates fall through the cracks and follow-ups are slow and repetitive.</p>
+      </div>
+      <div class="box">
+        <span class="lbl s">Solution</span>
+        <p>A React + TypeScript dashboard that unifies it all: candidate lists, a filterable candidate table, bulk add/remove and messaging, a drag-between-stages pipeline, and per-candidate WhatsApp conversation history — behind a modular, typed API layer so one recruiter can manage many candidates from a single screen.</p>
+      </div>
+    </div>
+
     <div class="card" style="margin-bottom:26px">
       <ul class="feat" style="columns:2;column-gap:30px">
         <li>List management — create, archive, and search candidate lists</li>
@@ -258,6 +291,10 @@
           <li>Structured JSON output schema (task, owner, due-date hints, status) for clean downstream use</li>
           <li><b>Inspired the production <i>Promises</i> feature at Cloop.ai</b> (a Sthaan.ai product)</li>
         </ul>
+        <div class="ps-mini">
+          <p><b class="p">Problem.</b> Important tasks get buried in long, multilingual WhatsApp threads full of noise, media, and system messages — so commitments made in chat are forgotten.</p>
+          <p><b class="s">Solution.</b> A pipeline that cleans raw chat exports and uses LLM prompts to pull out actionable to-dos (owner, due-date hints) as structured JSON, with dedup and self-vs-others classification.</p>
+        </div>
         <div class="stack"><span>Python</span><span>LLM APIs</span><span>Regex</span><span>JSON schema</span></div>
       </div>
       <div class="card">
@@ -269,6 +306,10 @@
           <li>JWT authentication with role separation (customers vs. restaurant admins)</li>
           <li>Responsive React UI with dynamic menus, search, filters, and cart persistence</li>
         </ul>
+        <div class="ps-mini">
+          <p><b class="p">Problem.</b> Small restaurants need a simple online ordering flow, but generic platforms are heavy and don't cleanly separate customer and admin roles.</p>
+          <p><b class="s">Solution.</b> A full-stack MERN app with JWT auth and role separation, REST APIs and MongoDB schemas for menus/users/orders, and a responsive UI with search, filters, cart persistence, and real-time order status.</p>
+        </div>
         <div class="stack"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span></div>
       </div>
     </div>
